@@ -329,12 +329,18 @@
 <section id="headline" class="slide level2">
 <h2>HEADLINE</h2>
 <center>
-<p><strong>“가능성”</strong></p>
+<p><strong>기억해 두자.</strong></p>
 <blockquote>
-<p>셀 수 있는 사건에서의 <strong>확률</strong></p>
+<p>셀 수 있는 사건 : <strong>확률 = 가능도</strong></p>
 </blockquote>
 <blockquote>
-<p>셀 수 없는 사건에서의 <strong>가능도</strong></p>
+<p>셀 수 없는 사건 中 특정 사건이 일어날 확률 = <strong>0</strong></p>
+</blockquote>
+<blockquote>
+<p>셀 수 없는 사건 : <strong>PDF값 = 가능도</strong></p>
+</blockquote>
+<blockquote>
+<p>진실을 찾는 방법 : <strong>최대가능도 추정량(Maximum Likelihood Estimator, MLE)</strong></p>
 </blockquote>
 </center>
 </section>
@@ -346,7 +352,8 @@
 <li><p>셀 수 없는 사건(연속사건)의 확률</p></li>
 <li><p>가능도(Likelihood) : 연속사건 中 특정 사건이 일어날 가능성</p></li>
 <li><p>사건이 여러번 일어날 경우의 가능도</p></li>
-<li><p>최대가능도 추정량(Maximum Likelihood Estimator, MLE)</p></li>
+<li><p>최대가능도 추정량(Maximum Likelihood Estimator, MLE) : 모양이 일그러진 동전</p></li>
+<li><p>최대가능도 추정량(Maximum Likelihood Estimator, MLE) : 나의 실제 키</p></li>
 <li><p>Conclusion</p></li>
 </ol>
 </section>
@@ -356,7 +363,7 @@
 <li>본 챕터에서는 <strong>가능도(Likelihood)</strong> 가 무엇인지 직관적으로 이해하는 것을 목표로 한다.</li>
 <li><strong>가능도</strong>는 통계학에서 빠질 수 없는 개념이지만 이상하게도 의학/보건학을 다루는 통계학 책에서는 잘 등장하지 않는다.</li>
 <li>이번 기회에 우리에게 익숙한 <strong>확률(Probability)</strong>과의 비교를 통해 대략적인 느낌을 파악하도록 하자.</li>
-<li>강의 말미에 등장하는 <strong>최대 가능도 추정량(Maximum Likelihood Estimator)</strong>은 통계적 추론에서 가장 중요한 개념 중 하나이므로 이또한 반드시 이해하고 넘어가자.</li>
+<li>강의 말미에 등장하는 <strong>최대가능도 추정량(Maximum Likelihood Estimator)</strong>은 통계적 추론에서 가장 중요한 개념 중 하나이므로 이 또한 반드시 이해하고 넘어가자.</li>
 </ul>
 </section>
 <section id="셀-수-있는-사건이산사건의-확률1" class="slide level2">
@@ -456,7 +463,7 @@
 <li>가능도의 직관적인 정의 : 확률밀도함수의 <span class="math inline">\(y\)</span>값 (PDF값)
 <ul>
 <li>이산사건: <strong>확률 = 가능도</strong></li>
-<li>연속사건: <strong>확률 <span class="math inline">\(\neq\)</span> 가능도</strong> =&gt; <strong>PDF값 = 가능도</strong></li>
+<li>연속사건: <strong>확률</strong> <span class="math inline">\(\neq\)</span> 가능도 =&gt; <strong>PDF값 = 가능도</strong></li>
 </ul></li>
 </ul>
 <div class="columns">
@@ -494,36 +501,54 @@
 <li><p>연속사건에서 확률과 가능도는 다른 값임을 확인할 수 있다.</p></li>
 </ul>
 </section>
-<section id="최대가능도-추정량maximum-likelihood-estimator1" class="slide level2">
-<h2>6. 최대가능도 추정량(Maximum Likelihood Estimator)(1)</h2>
+<section>
+<section id="최대가능도-추정량maximum-likelihood-estimator-mle" class="title-slide slide level1 center">
+<h1>최대가능도 추정량(Maximum Likelihood Estimator, MLE)</h1>
+
+</section>
+<section id="모양이-일그러진-동전---mle" class="slide level2">
+<h2>6. 모양이 일그러진 동전 - MLE</h2>
 <ul>
-<li><p>모양이 일그러진 동전이 있다.</p></li>
 <li><p>1000번 던져 앞면이 400번 나올 가능성을 최대로 하는 <span class="math inline">\(p\)</span>값(MLE)을 구해보자.</p></li>
 <li><p><span class="math inline">\(L=_{1000} C_{400}p^{400}(1-p)^{600}\)</span>이 최대가 되려면 <span class="math inline">\(\frac{3}{2}p=1-p\)</span>, 즉 <span class="math inline">\(p=0.4\)</span>이 된다.</p></li>
 <li><p>따라서 동전을 던져 앞면이 나올 확률 <span class="math inline">\(p\)</span>를 0.4로 추정할 수 있다.</p></li>
 </ul>
 
 <img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">동전 앞면이 나올 확률 <span class="math inline">\(p\)</span>에 따른 가능도 <span class="math inline">\(L\)</span></p></section>
-<section id="최대가능도-추정량maximum-likelihood-estimator2" class="slide level2">
-<h2>6. 최대가능도 추정량(Maximum Likelihood Estimator)(2)</h2>
+<section id="나의-실제-키---mle" class="slide level2">
+<h2>7. 나의 실제 키 - MLE</h2>
 <ul>
 <li><p>5번 측정해서 178, 179, 180, 181, 182(cm)가 나왔다면 나의 실제 키와 MLE는 얼마일까?</p></li>
 <li><p>키의 측정값이 <span class="math inline">\(x\)</span>일때의 가능도, 즉 정규분포의 <span class="math inline">\(y\)</span>값은 <span class="math inline">\(\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span>이다.</p></li>
-<li><p><span class="math inline">\(L=\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(178-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(179-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(180-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(181-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(182-\mu)^2}{2\sigma^2}}\)</span>이 최대가 되려면</p></li>
-<li><p><span class="math inline">\((178-\mu)^2+(179-\mu)^2+(180-\mu)^2+(181-\mu)^2+(182-\mu)^2\)</span>이 최소가 되도록 <span class="math inline">\(\mu=180\)</span>이 되다.</p></li>
+<li><p><span class="math inline">\(L\)</span> <small> <span class="math inline">\(=\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(178-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(179-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(180-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(181-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(182-\mu)^2}{2\sigma^2}}\)</span></small>이 최대가 되려면</p></li>
+<li><p><small> <span class="math inline">\((178-\mu)^2+(179-\mu)^2+(180-\mu)^2+(181-\mu)^2+(182-\mu)^2\)</span></small>이 최소가 되도록 하는 <span class="math inline">\(\mu=180\)</span>이 된다.</p></li>
 </ul>
 
 <img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">실제 키에 따른 가능도 <span class="math inline">\(L\)</span></p></section>
-<section id="마치며" class="slide level2">
-<h2>7. 마치며</h2>
+<section id="conclusion" class="slide level2">
+<h2>8. Conclusion</h2>
 <ul>
-<li>본 챕터에서는 통계학에서 필수적인 개념인 <strong>가능도</strong>와 <strong>MLE</strong>를 이해하기 위해 확률과의 비교를 통해 가능도와 MLE의 개념을 순서대로 설명하였으며, 각 순서마다 이산사건과 연속사건의 2가지 예를 제시하였다.</li>
+<li><p>이산사건과 연속사건에서의 확률 예시를 살펴봄으로써 <strong>가능도(Likelihood)</strong>와 <strong>최대가능도 추정량(MLE)</strong>에 대한 이야기를 나눴다.</p></li>
+<li><p>다시 한 번 아래 내용을 되새기며 <strong>가능도</strong>에 대한 개념을 짚고 넘어가기를 바란다.</p></li>
 </ul>
-
-<img src="zarathu_eng.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<center>
+<blockquote>
+<p>셀 수 있는 사건 : <strong>확률 = 가능도</strong></p>
+</blockquote>
+<blockquote>
+<p>셀 수 없는 사건 中 특정 사건이 일어날 확률 = <strong>0</strong></p>
+</blockquote>
+<blockquote>
+<p>셀 수 없는 사건 : <strong>PDF값 = 가능도</strong></p>
+</blockquote>
+<blockquote>
+<p>진실을 찾는 방법 : <strong>최대가능도 추정량(Maximum Likelihood Estimator, MLE)</strong></p>
+</blockquote>
+<p><img src="zarathu_eng.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p>www.zarathu.com</p>
 </div>
-</section>
+</center></section></section>
     </div>
   </div>
 

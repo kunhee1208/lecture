@@ -5,7 +5,7 @@ author: "Kunhee Lee"
 format:
   revealjs: 
     theme: default
-    logo: zarathu_eng.png
+    logo: "zarathu_eng.png"
     footer: "www.zarathu.com"
     self-contained: false
     chalkboard: 
@@ -23,12 +23,16 @@ editor_options:
 ## HEADLINE
 
 <center>
+**기억해 두자.**
 
-**"가능성"**
+> 셀 수 있는 사건 : **확률 = 가능도**
 
-> 셀 수 있는 사건에서의 **확률**
+> 셀 수 없는 사건 中 특정 사건이 일어날 확률 = **0**
 
-> 셀 수 없는 사건에서의 **가능도**
+> 셀 수 없는 사건 : **PDF값 = 가능도**
+
+> 진실을 찾는 방법 : **최대가능도 추정량(Maximum Likelihood Estimator, MLE)**
+
 
 </center>
 
@@ -44,16 +48,18 @@ editor_options:
 
 5)  사건이 여러번 일어날 경우의 가능도
 
-6)  최대가능도 추정량(Maximum Likelihood Estimator, MLE)
+6)  최대가능도 추정량(Maximum Likelihood Estimator, MLE) : 모양이 일그러진 동전
 
-7)  Conclusion
+7)  최대가능도 추정량(Maximum Likelihood Estimator, MLE) : 나의 실제 키
+
+8)  Conclusion
 
 ## 1. Intro
 
 -   본 챕터에서는 **가능도(Likelihood)** 가 무엇인지 직관적으로 이해하는 것을 목표로 한다.
 -   **가능도**는 통계학에서 빠질 수 없는 개념이지만 이상하게도 의학/보건학을 다루는 통계학 책에서는 잘 등장하지 않는다.
 -   이번 기회에 우리에게 익숙한 **확률(Probability)**과의 비교를 통해 대략적인 느낌을 파악하도록 하자.
--   강의 말미에 등장하는 **최대 가능도 추정량(Maximum Likelihood Estimator)**은 통계적 추론에서 가장 중요한 개념 중 하나이므로 이또한 반드시 이해하고 넘어가자.
+-   강의 말미에 등장하는 **최대가능도 추정량(Maximum Likelihood Estimator)**은 통계적 추론에서 가장 중요한 개념 중 하나이므로 이 또한 반드시 이해하고 넘어가자.
 
 ## 2. 셀 수 있는 사건(이산사건)의 확률(1)
 
@@ -77,8 +83,7 @@ grid.arrange(g1)
 
 -   동전을 예로 들어 보자.
 
--   동전을 10번 던져서 나올 수 있는 앞면의 횟수는 0\~10번이고 각 확률은 
-$p = _{10}C_{n}\frac{1}{2}^n\frac{1}{2}^{10-n} = _{10}C_{n}\frac{1}{2}^{10}=\frac{_{10}C_{n}}{1024}$로 구할 수 있다.
+-   동전을 10번 던져서 나올 수 있는 앞면의 횟수는 0\~10번이고 각 확률은 $p = _{10}C_{n}\frac{1}{2}^n\frac{1}{2}^{10-n} = _{10}C_{n}\frac{1}{2}^{10}=\frac{_{10}C_{n}}{1024}$로 구할 수 있다.
 
 <center>
 
@@ -86,7 +91,7 @@ $p = _{10}C_{n}\frac{1}{2}^n\frac{1}{2}^{10-n} = _{10}C_{n}\frac{1}{2}^{10}=\fra
 library(ggplot2);library(gridExtra)
 n=0:10
 f2=data.frame(n,p=dbinom(n,10,0.5))
-g2=ggplot(f2,aes(n,p))+geom_bar(stat = "identity",width=0.7)+xlab("앞면 횟수")+ylab("확률")+scale_x_continuous(breaks=0:10)+geom_text(data = NULL, x = c(0:10), y = 0.025, label = c("0.001", "0.01", "0.044", "0.117", "0.205", "0.246", "0.205", "0.117", "0.044", "0.01", "0.001"),size=6, colour='burlywood4')+theme(axis.text.x = element_text(size=20,face='bold'))
+g2=ggplot(f2,aes(n,p))+geom_bar(stat = "identity",width=0.7)+xlab("앞면 횟수")+ylab("확률")+scale_x_continuous(breaks=0:10)+geom_text(data = NULL, x = c(0:10), y = 0.01, label = c("0.001", "0.01", "0.044", "0.117", "0.205", "0.246", "0.205", "0.117", "0.044", "0.01", "0.001"),size=6, colour='deeppink')+theme(axis.text.x = element_text(size=20,face='bold'))
 grid.arrange(g2)
 ```
 
@@ -94,7 +99,7 @@ grid.arrange(g2)
 
 ## 2. 셀 수 있는 사건(이산사건)의 확률(3)
 
--   앞의 두 경우는 모두 일어날 수 있는 사건의 개수가 6개, 11개로 정해져 있다. -> 이산사건
+-   앞의 두 경우는 모두 일어날 수 있는 사건의 개수가 6개, 11개로 정해져 있다. -\> 이산사건
 -   따라서 각각의 확률을 구할 수 있고, 구한 확률의 총합은 1이 된다.
 -   즉 **이산사건에서의 확률 = 가능성** 이다.
 
@@ -122,7 +127,7 @@ grid.arrange( g1, g2, ncol=2)
 
 ## 3. 셀 수 없는 사건(연속사건)의 확률(2)
 
--   앞의 예시에서 5가 뽑힐 확률은 0이지만, 4에서 5 사이의 숫자가 뽑힐 확률은 $\frac{1}{5}=0.2$이다. 
+-   앞의 예시에서 5가 뽑힐 확률은 0이지만, 4에서 5 사이의 숫자가 뽑힐 확률은 $\frac{1}{5}=0.2$이다.
 -   이처럼 우리는 **특정 구간에 속할 확률**을 구함으로써 간접적으로 특정 사건의 확률에 대한 감을 잡을 수 있다.
 -   이것을 설명하는 곡선이 바로 **확률밀도함수(Probability Density Function: PDF)**이다.
 -   확률밀도함수 그래프에서 **특정 구간에 속한 넓이 = 특정 구간에 속할 확률**임을 기억하고 넘어가자.
@@ -142,8 +147,8 @@ grid.arrange(g3)
 ## 3. 셀 수 없는 사건(연속사건)의 확률(4)
 
 -   우리에게 익숙한 표준정규분포(Standard normal distribution)의 **확률밀도함수**를 살펴보자.
--   표준정규분포의 PDF는 다들 알고 있는대로(?) $\frac{1}{\sqrt{2\pi}}e^{-z^2/2}$이며, 
-- $z$가 특정 값일 확률은 0이지만 -1.96 \~ 1.96에 속할 확률은 0.95이다.
+-   표준정규분포의 PDF는 다들 알고 있는대로(?) $\frac{1}{\sqrt{2\pi}}e^{-z^2/2}$이며,
+-   $z$가 특정 값일 확률은 0이지만 -1.96 \~ 1.96에 속할 확률은 0.95이다.
 
 ```{r, echo=FALSE,fig.width=10,fig.cap="표준정규분포의 확률밀도함수"}
 z=seq(-4, 4, length=100)
@@ -154,9 +159,9 @@ grid.arrange(g3)
 
 ## 3. 셀 수 없는 사건(연속사건)의 확률(5)
 
-- 표준정규분포에서 $z$가 정확히 -2,0,...999일 확률은 모두 0이므로 각 사건이 일어날 가능성에 차이가 없다고 말해야 한다.   
-- but 우리는 가장 솟아 있는 0 근처일 경우의 가능성이 가장 높고, 0에서 멀어질수록 낮아짐을 직관적으로 알 수 있다. 
--  즉 **확률** 로는 연속사건 간의 가능성 차이를 나타낼 수 없다는 한계가 있다.
+-   표준정규분포에서 $z$가 정확히 -2,0,...999일 확률은 모두 0이므로 각 사건이 일어날 가능성에 차이가 없다고 말해야 한다.\
+-   but 우리는 가장 솟아 있는 0 근처일 경우의 가능성이 가장 높고, 0에서 멀어질수록 낮아짐을 직관적으로 알 수 있다.
+-   즉 **확률** 로는 연속사건 간의 가능성 차이를 나타낼 수 없다는 한계가 있다.
 
 ```{r, echo=FALSE,fig.width=10,fig.cap="표준정규분포의 확률밀도함수"}
 z=seq(-4, 4, length=100)
@@ -167,12 +172,11 @@ grid.arrange(g3)
 
 ## 4. 가능도 : 연속사건 中 특정 사건이 일어날 가능성
 
-- 가능도의 직관적인 정의 : 확률밀도함수의 $y$값 (PDF값)
-    + 이산사건: **확률 = 가능도** 
-    + 연속사건: **확률 $\neq$ 가능도** => **PDF값 = 가능도**
+-   가능도의 직관적인 정의 : 확률밀도함수의 $y$값 (PDF값)
+    -   이산사건: **확률 = 가능도**
+    -   연속사건: **확률** $\neq$ 가능도 =\> **PDF값 = 가능도**
 
-
-:::: {.columns}
+::: columns
 ::: {.column width="50%"}
 ```{r,echo=F,fig.width=8}
 library(ggplot2);library(gridExtra)
@@ -194,47 +198,44 @@ g4=ggplot(f3,aes(z,p))+geom_line()+xlab("z")+ylab("Density")+ geom_ribbon(data=s
 grid.arrange(g3,g4, ncol=2)
 ```
 :::
-::::
-
+:::
 
 ## 5. 이산사건이 여러번 일어날 경우의 가능도
 
+-   주사위를 3번 던져 각각 1,3,6이 나올 확률은 얼마일까?
 
-- 주사위를 3번 던져 각각 1,3,6이 나올 확률은 얼마일까?
+    =\> $\frac{1}{6}\times\frac{1}{6}\times\frac{1}{6}=\frac{1}{216}$
 
-    => $\frac{1}{6}\times\frac{1}{6}\times\frac{1}{6}=\frac{1}{216}$
+-   동전 10번 던지는 행위를 3회 시행하여 앞면이 각각 2,5,7번 나올 확률은 얼마일까?
 
-- 동전 10번 던지는 행위를 3회 시행하여 앞면이 각각 2,5,7번 나올 확률은 얼마일까?
-
-    => `r round(dbinom(2,10,0.5),3)` $\times$ `r round(dbinom(5,10,0.5),3)` $\times$ `r round(dbinom(7,10,0.5),3)`$=$ `r round(dbinom(2,10,0.5)*dbinom(5,10,0.5)*dbinom(7,10,0.5),3)`
+    =\> `r round(dbinom(2,10,0.5),3)` $\times$ `r round(dbinom(5,10,0.5),3)` $\times$ `r round(dbinom(7,10,0.5),3)`$=$ `r round(dbinom(2,10,0.5)*dbinom(5,10,0.5)*dbinom(7,10,0.5),3)`
 
 -   **셀 수 있는 사건(이산사건)에서 확률 = 가능도**이므로 각각의 가능도 역시 $\frac{1}{216}$과 `r round(dbinom(2,10,0.5)*dbinom(5,10,0.5)*dbinom(7,10,0.5),3)`이다.
 
-
-
 ## 5. 연속사건이 여러번 일어날 경우의 가능도
-
 
 -   표준정규분포에서 숫자를 3번 뽑았을 때 차례대로 -1, 0, 1이 나올 확률과 가능도는 얼마일까?
 
-- **확률** : 각 사건이 일어날 확률이 모두 0이므로 0
- 
-- **가능도** : 각 사건의 가능도가  `r round(dnorm(1),2)`, `r round(dnorm(0),2)`, `r round(dnorm(1),2)`이므로
-`r round(dnorm(1),2)` $\times$ `r round(dnorm(0),2)` $\times$ `r round(dnorm(1),2)` $=$ `r round(dnorm(0)*dnorm(1)^2,2)`
-- 연속사건에서 확률과 가능도는 다른 값임을 확인할 수 있다.
+-   **확률** : 각 사건이 일어날 확률이 모두 0이므로 0
+
+-   **가능도** : 각 사건의 가능도가 `r round(dnorm(1),2)`, `r round(dnorm(0),2)`, `r round(dnorm(1),2)`이므로 `r round(dnorm(1),2)` $\times$ `r round(dnorm(0),2)` $\times$ `r round(dnorm(1),2)` $=$ `r round(dnorm(0)*dnorm(1)^2,2)`
+
+-   연속사건에서 확률과 가능도는 다른 값임을 확인할 수 있다.
+
+
+# 최대가능도 추정량(Maximum Likelihood Estimator, MLE)
 
 
 
-## 6. 최대가능도 추정량(Maximum Likelihood Estimator)(1)
 
--  모양이 일그러진 동전이 있다. 
+## 6. 모양이 일그러진 동전 - MLE 
 
-- 1000번 던져 앞면이 400번 나올 가능성을 최대로 하는 $p$값(MLE)을 구해보자. 
 
-- $L=_{1000} C_{400}p^{400}(1-p)^{600}$이 최대가 되려면 $\frac{3}{2}p=1-p$, 즉  $p=0.4$이 된다. 
+-   1000번 던져 앞면이 400번 나올 가능성을 최대로 하는 $p$값(MLE)을 구해보자.
 
--  따라서 동전을 던져 앞면이 나올 확률 $p$를 0.4로 추정할 수 있다.
+-   $L=_{1000} C_{400}p^{400}(1-p)^{600}$이 최대가 되려면 $\frac{3}{2}p=1-p$, 즉 $p=0.4$이 된다.
 
+-   따라서 동전을 던져 앞면이 나올 확률 $p$를 0.4로 추정할 수 있다.
 
 ```{r,echo=F,fig.cap="동전 앞면이 나올 확률 $p$에 따른 가능도 $L$"}
 p=seq(0.2,0.6,0.001)
@@ -243,26 +244,41 @@ g5=ggplot(data.frame(p,L),aes(p,L))+geom_line()+xlab(expression(italic(p)))+ylab
 grid.arrange(g5)
 ```
 
+## 7. 나의 실제 키 - MLE
+
+-   5번 측정해서 178, 179, 180, 181, 182(cm)가 나왔다면 나의 실제 키와 MLE는 얼마일까?
+
+-   키의 측정값이 $x$일때의 가능도, 즉 정규분포의 $y$값은 $\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$이다.
+
+- $L$
+<small>
+$=\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(178-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(179-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(180-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(181-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(182-\mu)^2}{2\sigma^2}}$</small>이 최대가 되려면
 
 
-## 6. 최대가능도 추정량(Maximum Likelihood Estimator)(2)
-
--   5번 측정해서 178, 179, 180, 181, 182(cm)가 나왔다면 나의 실제 키와 MLE는 얼마일까? 
-
-- 키의 측정값이 $x$일때의 가능도, 즉 정규분포의 $y$값은 $\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$이다.
-
-- $L=\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(178-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(179-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(180-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(181-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(182-\mu)^2}{2\sigma^2}}$이 최대가 되려면 
-- $(178-\mu)^2+(179-\mu)^2+(180-\mu)^2+(181-\mu)^2+(182-\mu)^2$이 최소가 되도록 $\mu=180$이 되다. 
-
-
+-  
+<small>
+$(178-\mu)^2+(179-\mu)^2+(180-\mu)^2+(181-\mu)^2+(182-\mu)^2$</small>이 최소가 되도록 하는 $\mu=180$이 된다.
 
 ```{r,fig.cap="실제 키에 따른 가능도 $L$",echo=F}
 mu=seq(178,182,0.01)
 L=1/sqrt(2*pi)^5 * exp(-((mu-178)^2+(mu-179)^2++(mu-180)^2+(mu-181)^2++(mu-182)^2)/2)
-ggplot(data.frame(mu,L),aes(mu,L))+geom_line()+xlab(expression(paste("실제 키(",mu,")",sep="")))+ylab(expression(italic(L)))
+ggplot(data.frame(mu,L),aes(mu,L))+geom_line()+xlab(expression(paste("실제 키(",mu,")",sep="")))+ylab(expression(italic(L)))+theme(axis.text.x =element_text(size=15,face='bold'))
 ```
 
 
-## 7. 마치며
+## 8. Conclusion
 
--   본 챕터에서는 통계학에서 필수적인 개념인 **가능도**와 **MLE**를 이해하기 위해 확률과의 비교를 통해 가능도와 MLE의 개념을 순서대로 설명하였으며, 각 순서마다 이산사건과 연속사건의 2가지 예를 제시하였다.
+- 이산사건과 연속사건에서의 확률 예시를 살펴봄으로써 **가능도(Likelihood)**와 **최대가능도 추정량(MLE)**에 대한 이야기를 나눴다.
+
+- 다시 한 번 아래 내용을 되새기며 **가능도**에 대한 개념을 짚고 넘어가기를 바란다.   
+
+<center>
+
+> 셀 수 있는 사건 : **확률 = 가능도**
+
+> 셀 수 없는 사건 中 특정 사건이 일어날 확률 = **0**
+
+> 셀 수 없는 사건 : **PDF값 = 가능도**
+
+> 진실을 찾는 방법 : **최대가능도 추정량(Maximum Likelihood Estimator, MLE)**
+
