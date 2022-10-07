@@ -4,7 +4,8 @@ author: "Kunhee Lee"
 format: 
   html:
     code-background: true
-execute: 
+execute:
+  keep-md: true
   warning: false
 ---
 
