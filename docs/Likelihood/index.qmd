@@ -23,6 +23,7 @@ editor_options:
 ## HEADLINE
 
 <center>
+
 **기억해 두자.**
 
 > 셀 수 있는 사건 : **확률 = 가능도**
@@ -32,7 +33,6 @@ editor_options:
 > 셀 수 없는 사건 : **PDF값 = 가능도**
 
 > 진실을 찾는 방법 : **최대가능도 추정량(Maximum Likelihood Estimator, MLE)**
-
 
 </center>
 
@@ -222,14 +222,9 @@ grid.arrange(g3,g4, ncol=2)
 
 -   연속사건에서 확률과 가능도는 다른 값임을 확인할 수 있다.
 
-
 # 최대가능도 추정량(Maximum Likelihood Estimator, MLE)
 
-
-
-
-## 6. 모양이 일그러진 동전 - MLE 
-
+## 6. 모양이 일그러진 동전 - MLE
 
 -   1000번 던져 앞면이 400번 나올 가능성을 최대로 하는 $p$값(MLE)을 구해보자.
 
@@ -250,14 +245,9 @@ grid.arrange(g5)
 
 -   키의 측정값이 $x$일때의 가능도, 즉 정규분포의 $y$값은 $\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$이다.
 
-- $L$
-<small>
-$=\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(178-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(179-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(180-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(181-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(182-\mu)^2}{2\sigma^2}}$</small>이 최대가 되려면
+-   $L$ <small> $=\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(178-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(179-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(180-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(181-\mu)^2}{2\sigma^2}}\times\frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{(182-\mu)^2}{2\sigma^2}}$</small>이 최대가 되려면
 
-
--  
-<small>
-$(178-\mu)^2+(179-\mu)^2+(180-\mu)^2+(181-\mu)^2+(182-\mu)^2$</small>이 최소가 되도록 하는 $\mu=180$이 된다.
+-   <small> $(178-\mu)^2+(179-\mu)^2+(180-\mu)^2+(181-\mu)^2+(182-\mu)^2$</small>이 최소가 되도록 하는 $\mu=180$이 된다.
 
 ```{r,fig.cap="실제 키에 따른 가능도 $L$",echo=F}
 mu=seq(178,182,0.01)
@@ -265,12 +255,11 @@ L=1/sqrt(2*pi)^5 * exp(-((mu-178)^2+(mu-179)^2++(mu-180)^2+(mu-181)^2++(mu-182)^
 ggplot(data.frame(mu,L),aes(mu,L))+geom_line()+xlab(expression(paste("실제 키(",mu,")",sep="")))+ylab(expression(italic(L)))+theme(axis.text.x =element_text(size=15,face='bold'))
 ```
 
-
 ## 8. Conclusion
 
-- 이산사건과 연속사건에서의 확률 예시를 살펴봄으로써 **가능도(Likelihood)**와 **최대가능도 추정량(MLE)**에 대한 이야기를 나눴다.
+-   이산사건과 연속사건에서의 확률 예시를 살펴봄으로써 **가능도(Likelihood)**와 **최대가능도 추정량(MLE)**에 대한 이야기를 나눴다.
 
-- 다시 한 번 아래 내용을 되새기며 **가능도**에 대한 개념을 짚고 넘어가기를 바란다.   
+-   다시 한 번 아래 내용을 되새기며 **가능도**에 대한 개념을 짚고 넘어가기를 바란다.
 
 <center>
 
@@ -281,4 +270,3 @@ ggplot(data.frame(mu,L),aes(mu,L))+geom_line()+xlab(expression(paste("실제 키
 > 셀 수 없는 사건 : **PDF값 = 가능도**
 
 > 진실을 찾는 방법 : **최대가능도 추정량(Maximum Likelihood Estimator, MLE)**
-
