@@ -124,12 +124,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="data-url-아래-url을-불러와-문제를-해결하시오." class="level2">
-<h2 class="anchored" data-anchor-id="data-url-아래-url을-불러와-문제를-해결하시오.">data URL: 아래 url을 불러와 문제를 해결하시오.</h2>
+<section id="data-url" class="level2">
+<h2 class="anchored" data-anchor-id="data-url">data URL</h2>
 <p>“https://raw.githubusercontent.com/jinseob2kim/R-skku-biohrs/main/data/example_g1e.csv”</p>
 </section>
-<section id="r코드와-실행결과를-모두-아래-메일로-보내주십시오." class="level2">
-<h2 class="anchored" data-anchor-id="r코드와-실행결과를-모두-아래-메일로-보내주십시오.">R코드와 실행결과를 모두 아래 메일로 보내주십시오.</h2>
+<section id="r코드와-실행결과를-모두-아래-메일로-보내주세요." class="level2">
+<h2 class="anchored" data-anchor-id="r코드와-실행결과를-모두-아래-메일로-보내주세요.">R코드와 실행결과를 모두 아래 메일로 보내주세요.</h2>
 <ul>
 <li>lisalee1208@naver.com</li>
 <li>jinseob2kim@gmail.com</li>
@@ -174,8 +174,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="q1.-q_-로-시작하는-변수는-범주형factor으로-나머지-변수는-숫자형integer으로-만드시오." class="level2">
-<h2 class="anchored" data-anchor-id="q1.-q_-로-시작하는-변수는-범주형factor으로-나머지-변수는-숫자형integer으로-만드시오.">Q1. “Q_” 로 시작하는 변수는 범주형(factor)으로, 나머지 변수는 숫자형(integer)으로 만드시오.</h2>
+<section id="q1.-q_-로-시작하는-변수는-범주형factor으로-나머지-변수는-숫자형integer으로-만드세요." class="level2">
+<h2 class="anchored" data-anchor-id="q1.-q_-로-시작하는-변수는-범주형factor으로-나머지-변수는-숫자형integer으로-만드세요.">Q1. “Q_” 로 시작하는 변수는 범주형(factor)으로, 나머지 변수는 숫자형(integer)으로 만드세요.</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># "Q_"로 시작하는 변수 추출하는 두 가지 방법 </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>var.factor <span class="ot">&lt;-</span> <span class="fu">names</span>(a)[<span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">12</span>)]  </span>
@@ -192,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 위에서 추출한 변수를 제외한 나머지 변수 추출하는 두 가지 방법 </span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>var.conti <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(<span class="fu">names</span>(a), var.factor)    </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>var.conti <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(<span class="fu">names</span>(a), var.factor)    <span class="co"># setdiff() : 차집합 함수 </span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>var.conti <span class="ot">&lt;-</span> <span class="fu">names</span>(a)[<span class="sc">!</span>(<span class="fu">names</span>(a) <span class="sc">%in%</span> var.factor)]     <span class="co"># ! = 'not', %in% = 'including'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -241,17 +241,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="q2.-연속-변수-wstc와-bmi의-연도별-평균-및-표준편차를-구하시오." class="level2">
-<h2 class="anchored" data-anchor-id="q2.-연속-변수-wstc와-bmi의-연도별-평균-및-표준편차를-구하시오.">Q2. 연속 변수 “WSTC”와 “BMI”의 연도별 평균 및 표준편차를 구하시오.</h2>
+<section id="q2.-연속-변수-wstc와-bmi의-연도별-평균-및-표준편차를-구하세요." class="level2">
+<h2 class="anchored" data-anchor-id="q2.-연속-변수-wstc와-bmi의-연도별-평균-및-표준편차를-구하세요.">Q2. 연속 변수 “WSTC”와 “BMI”의 연도별 평균 및 표준편차를 구하세요.</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregate() 함수 : 데이터의 특정 변수를 기준으로 통계량을 구해주는 함수</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># aggregate(data, '기준이 되는 변수', 함수)</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(a[,<span class="fu">c</span>(<span class="st">"WSTC"</span>,<span class="st">"BMI"</span>)], <span class="fu">list</span>(a<span class="sc">$</span>EXMD_BZ_YYYY), mean)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(a[,<span class="fu">c</span>(<span class="st">"WSTC"</span>,<span class="st">"BMI"</span>)], <span class="fu">list</span>(a<span class="sc">$</span>EXMD_BZ_YYYY), sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(a[,<span class="fu">c</span>(<span class="st">"WSTC"</span>,<span class="st">"BMI"</span>)], <span class="fu">list</span>(a<span class="sc">$</span>EXMD_BZ_YYYY), sd)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#or</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>both <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="fu">cbind</span>(WSTC, BMI) <span class="sc">~</span> EXMD_BZ_YYYY, <span class="at">data =</span> a, <span class="cf">function</span>(x){<span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">mean</span>(x), <span class="at">sd =</span> <span class="fu">sd</span>(x))})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(a[,<span class="fu">c</span>(<span class="st">"WSTC"</span>,<span class="st">"BMI"</span>)], <span class="fu">list</span>(a<span class="sc">$</span>EXMD_BZ_YYYY), mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(a[,<span class="fu">c</span>(<span class="st">"WSTC"</span>,<span class="st">"BMI"</span>)], <span class="fu">list</span>(a<span class="sc">$</span>EXMD_BZ_YYYY), mean)  <span class="co"># 연도별 평균</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Group.1     WSTC      BMI
 1    2009 79.55607 23.76402
@@ -262,7 +264,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 6    2014 80.71260 23.78031
 7    2015 81.20417 24.28167</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(a[,<span class="fu">c</span>(<span class="st">"WSTC"</span>,<span class="st">"BMI"</span>)], <span class="fu">list</span>(a<span class="sc">$</span>EXMD_BZ_YYYY), sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(a[,<span class="fu">c</span>(<span class="st">"WSTC"</span>,<span class="st">"BMI"</span>)], <span class="fu">list</span>(a<span class="sc">$</span>EXMD_BZ_YYYY), sd)    <span class="co"># 연도별 표준 편차 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Group.1     WSTC      BMI
 1    2009 9.528023 3.392946
@@ -275,10 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>both <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="fu">cbind</span>(WSTC, BMI) <span class="sc">~</span> EXMD_BZ_YYYY, <span class="at">data =</span> a, <span class="cf">function</span>(x){<span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">mean</span>(x), <span class="at">sd =</span> <span class="fu">sd</span>(x))})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">cbind</span>(WSTC, BMI) <span class="sc">~</span> EXMD_BZ_YYYY, <span class="at">data =</span> a, <span class="cf">function</span>(x){<span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">mean</span>(x), <span class="at">sd =</span> <span class="fu">sd</span>(x))})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">cbind</span>(WSTC, BMI) <span class="sc">~</span> EXMD_BZ_YYYY, <span class="at">data =</span> a, <span class="cf">function</span>(x){<span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">mean</span>(x), <span class="at">sd =</span> <span class="fu">sd</span>(x))})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  EXMD_BZ_YYYY WSTC.mean   WSTC.sd  BMI.mean    BMI.sd
 1         2009 79.556075  9.528023 23.764019  3.392946
@@ -291,23 +290,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="q3.-연도별-fbs를-나타내는-boxplot을-그리고-pptx로-저장하시오.-x축-exmd_bz_yyyy-y축-fbs" class="level2">
-<h2 class="anchored" data-anchor-id="q3.-연도별-fbs를-나타내는-boxplot을-그리고-pptx로-저장하시오.-x축-exmd_bz_yyyy-y축-fbs">Q3. 연도별 “FBS”를 나타내는 Boxplot을 그리고 pptx로 저장하시오. (x축: “EXMD_BZ_YYYY”, y축: “FBS”)</h2>
+<section id="q3.-연도별-fbs를-나타내는-boxplot을-그린-후-pptx로-저장하세요.-x축-exmd_bz_yyyy-y축-fbs" class="level2">
+<h2 class="anchored" data-anchor-id="q3.-연도별-fbs를-나타내는-boxplot을-그린-후-pptx로-저장하세요.-x축-exmd_bz_yyyy-y축-fbs">Q3. 연도별 “FBS”를 나타내는 Boxplot을 그린 후 pptx로 저장하세요. (x축: “EXMD_BZ_YYYY”, y축: “FBS”)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot 그리기 </span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggboxplot</span>(<span class="at">data=</span> a, <span class="at">x=</span> <span class="st">"EXMD_BZ_YYYY"</span>, <span class="at">y=</span> <span class="st">"FBS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot 그리기 </span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggboxplot</span>(<span class="at">data=</span> a, <span class="at">x=</span> <span class="st">"EXMD_BZ_YYYY"</span>, <span class="at">y=</span> <span class="st">"FBS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(<span class="at">data=</span> a, <span class="at">x=</span> <span class="st">"EXMD_BZ_YYYY"</span>, <span class="at">y=</span> <span class="st">"FBS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(<span class="at">data=</span> a, <span class="at">x=</span> <span class="st">"EXMD_BZ_YYYY"</span>, <span class="at">y=</span> <span class="st">"FBS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pptx로 저장하기</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plot_file <span class="ot">&lt;-</span> <span class="fu">read_pptx</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_slide</span>() <span class="sc">%&gt;%</span> <span class="fu">ph_with</span>(<span class="fu">dml</span>(<span class="at">ggobj =</span> p), <span class="at">location =</span> <span class="fu">ph_location_type</span>(<span class="at">type=</span><span class="st">"body"</span>))</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_file, <span class="at">target =</span> <span class="st">"plot_file.pptx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pptx로 저장하기</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plot_file <span class="ot">&lt;-</span> <span class="fu">read_pptx</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_slide</span>() <span class="sc">%&gt;%</span> <span class="fu">ph_with</span>(<span class="fu">dml</span>(<span class="at">ggobj =</span> p), <span class="at">location =</span> <span class="fu">ph_location_type</span>(<span class="at">type=</span><span class="st">"body"</span>))</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_file, <span class="at">target =</span> <span class="st">"plot_file.pptx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 

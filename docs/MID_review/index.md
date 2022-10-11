@@ -11,11 +11,11 @@ execute:
 
 
 
-## data URL: 아래 url을 불러와 문제를 해결하시오.
+## data URL
 
 "https://raw.githubusercontent.com/jinseob2kim/R-skku-biohrs/main/data/example_g1e.csv"
 
-## R코드와 실행결과를 모두 아래 메일로 보내주십시오.
+## R코드와 실행결과를 모두 아래 메일로 보내주세요.
 
 - lisalee1208@naver.com
 - jinseob2kim@gmail.com
@@ -67,7 +67,7 @@ a <- fread("https://raw.githubusercontent.com/jinseob2kim/R-skku-biohrs/main/dat
 :::
 
 
-## Q1. "Q\_" 로 시작하는 변수는 범주형(factor)으로, 나머지 변수는 숫자형(integer)으로 만드시오.
+## Q1. "Q\_" 로 시작하는 변수는 범주형(factor)으로, 나머지 변수는 숫자형(integer)으로 만드세요.
 
 
 ::: {.cell}
@@ -99,7 +99,7 @@ var.factor
 
 ```{.r .cell-code}
 # 위에서 추출한 변수를 제외한 나머지 변수 추출하는 두 가지 방법 
-var.conti <- setdiff(names(a), var.factor)    
+var.conti <- setdiff(names(a), var.factor)    # setdiff() : 차집합 함수 
 # or
 var.conti <- names(a)[!(names(a) %in% var.factor)]     # ! = 'not', %in% = 'including'
 ```
@@ -168,7 +168,7 @@ sapply(a, class)
 :::
 
 
-## Q2. 연속 변수 "WSTC"와 "BMI"의 연도별 평균 및 표준편차를 구하시오.
+## Q2. 연속 변수 "WSTC"와 "BMI"의 연도별 평균 및 표준편차를 구하세요.
 
 
 ::: {.cell}
@@ -179,13 +179,15 @@ sapply(a, class)
 # aggregate(data, '기준이 되는 변수', 함수)
 mean <- aggregate(a[,c("WSTC","BMI")], list(a$EXMD_BZ_YYYY), mean)
 sd <- aggregate(a[,c("WSTC","BMI")], list(a$EXMD_BZ_YYYY), sd)
+#or
+both <- aggregate(cbind(WSTC, BMI) ~ EXMD_BZ_YYYY, data = a, function(x){c(mean = mean(x), sd = sd(x))})
 ```
 :::
 
 ::: {.cell}
 
 ```{.r .cell-code}
-aggregate(a[,c("WSTC","BMI")], list(a$EXMD_BZ_YYYY), mean)
+aggregate(a[,c("WSTC","BMI")], list(a$EXMD_BZ_YYYY), mean)  # 연도별 평균
 ```
 
 ::: {.cell-output .cell-output-stdout}
@@ -202,7 +204,7 @@ aggregate(a[,c("WSTC","BMI")], list(a$EXMD_BZ_YYYY), mean)
 :::
 
 ```{.r .cell-code}
-aggregate(a[,c("WSTC","BMI")], list(a$EXMD_BZ_YYYY), sd)
+aggregate(a[,c("WSTC","BMI")], list(a$EXMD_BZ_YYYY), sd)    # 연도별 표준 편차 
 ```
 
 ::: {.cell-output .cell-output-stdout}
@@ -217,13 +219,6 @@ aggregate(a[,c("WSTC","BMI")], list(a$EXMD_BZ_YYYY), sd)
 7    2015 9.939776 3.544363
 ```
 :::
-:::
-
-::: {.cell}
-
-```{.r .cell-code}
-both <- aggregate(cbind(WSTC, BMI) ~ EXMD_BZ_YYYY, data = a, function(x){c(mean = mean(x), sd = sd(x))})
-```
 :::
 
 ::: {.cell}
@@ -248,7 +243,7 @@ aggregate(cbind(WSTC, BMI) ~ EXMD_BZ_YYYY, data = a, function(x){c(mean = mean(x
 
 
 
-## Q3. 연도별 "FBS"를 나타내는 Boxplot을 그리고 pptx로 저장하시오. (x축: "EXMD_BZ_YYYY", y축: "FBS")
+## Q3. 연도별 "FBS"를 나타내는 Boxplot을 그린 후 pptx로 저장하세요. (x축: "EXMD_BZ_YYYY", y축: "FBS")
 
 
 ::: {.cell}
@@ -266,7 +261,7 @@ ggboxplot(data= a, x= "EXMD_BZ_YYYY", y= "FBS")
 ```
 
 ::: {.cell-output-display}
-![](index_files/figure-html/unnamed-chunk-14-1.png){width=672}
+![](index_files/figure-html/unnamed-chunk-13-1.png){width=672}
 :::
 :::
 
