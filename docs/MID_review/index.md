@@ -274,3 +274,10 @@ plot_file <- read_pptx() %>%
 print(plot_file, target = "plot_file.pptx")
 ```
 :::
+
+::: {.cell}
+
+```{.r .cell-code}
+# 시험 혹은 수업 관련 질문은 조교 메일(lisalee1208@naver.com)로 보내 주세요.
+```
+:::
