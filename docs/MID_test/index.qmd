@@ -1,0 +1,47 @@
+---
+title: "SKKU BIOHRS-MIDTERM"
+subtitle: Pf. Jinseob Kim
+author: TA. Kunhee Lee 
+fontsize: 12pt
+format: 
+  html:
+    code-background: true
+execute:
+  keep-md: true
+  warning: false
+---
+
+## data URL
+
+"https://raw.githubusercontent.com/jinseob2kim/R-skku-biohrs/main/data/example_g1e.csv"
+
+## **R코드**와 **실행결과**를 모두 아래 메일로 보내주세요.
+
+- lisalee1208@naver.com
+- jinseob2kim@gmail.com
+
+## 필요한 library 및 시험 문제 
+
+```{r}
+
+library(data.table);library(magrittr);library(ggpubr);library(rvg);library(officer) 
+
+
+```
+
+```{r}
+# 1. "Q_" 로 시작하는 변수는 범주형(factor)으로, 나머지 변수는 숫자형(integer)으로 만드세요.(15점)
+
+
+# 2. 연속 변수 "WSTC"와 "BMI"의 연도별 평균 및 표준편차를 구하세요.(15점)
+
+
+# 3. 연도별 "FBS"를 나타내는 Boxplot을 그린 후 pptx로 저장하세요. (x축: "EXMD_BZ_YYYY", y축: "FBS")(10점)
+
+```
+
+
+## 수고하셨습니다!
+
+
+
