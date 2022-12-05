@@ -1,0 +1,68 @@
+---
+title: "SKKU BIOHRS-FINAL"
+subtitle: Pf. Jinseob Kim
+author: TA. Kunhee Lee 
+fontsize: 12pt
+format: 
+  html:
+    code-background: true
+execute:
+  keep-md: true
+  warning: false
+---
+
+
+
+## data URL
+
+"https://raw.githubusercontent.com/jinseob2kim/lecture-snuhlab/master/data/example_g1e.csv"
+
+## **R코드**와 **실행결과**를 모두 아래 메일로 보내주세요.
+
+- lisalee1208@naver.com
+- jinseob2kim@gmail.com
+
+## 필요한 library 및 시험 문제 
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(tableone);library(data.table);library(magrittr);library(survival);library(jstable)
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+# Q1. Table 1 만들기(15점)
+# 불러온 데이터의 연도 별 주어진 변수의 기술통계량을 보여주는 table 작성한 뒤, Rmarkdown으로 제출하세요. 
+# 단, 변수 Q_SMK_YN과 Q_HBV_AG는 범주형으로 변환하세요.   
+
+# 주어진 변수 : "HGHT", "WGHT", "BMI", "HDL", "LDL", "Q_SMK_YN", "Q_HBV_AG" (총 7개)
+
+
+# Q2. 선형회귀, 로지스틱, 콕스생존분석 Table 만들기(15점)
+# survival 패키지에 내장되어 있는 대장암 데이터 'colon'을 사용하여 아래 3개의 table 작성한 뒤, Rmarkdown으로 제출하세요. 
+
+# 2-1) 선형 회귀분석(Linear regression)(5점)
+# time ~ rx + age + sex 선형회귀 실행 후 table로 나타내세요.
+
+# 2-2) 로지스틱 회귀분석(Logistic regression)(5점)
+# status ~ rx + age + sex 로지스틱 회귀 실행 후 table로 나타내세요.
+
+# 2-3) 콕스 생존분석(Cox proportional hazard)(5점)
+# Surv(time, status) ~ rx + age + sex 실행 후 table로 나타내세요.
+
+
+# Q3. 샤이니 웹 앱 만든 후 ShinyApps.io 배포하기(10점)
+# ShinyApps.io를 통해 배포한 후, 생성된 url도 함께 제출하세요.
+```
+:::
+
+
+
+## 수고하셨습니다!
+
+
+
