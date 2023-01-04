@@ -1,0 +1,165 @@
+---
+title: "좋은 나로 거듭나는 과정"
+subtitle: "Zarathu mentoring"
+author: "Kunhee Lee"
+date: "2023-01-05"
+format:
+  revealjs: 
+    theme: default
+    logo: "zarathu_eng.png"
+    self-contained: false
+    chalkboard: 
+      buttons: false
+    preview-links: true
+    show-notes: false
+    slide-number: false
+    width: 1600
+    height: 900
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## Contents
+
+<center>
+
+> **1. 소개**
+
+> **2. 차라투에서 맡은 role**
+
+> **3. 앞으로의 비전**
+
+> **4. Q & A**
+
+</center>
+
+## 1. 소개
+
+-   용인 한국외국어대학교부설고등학교 졸업
+
+-   연세대학교 중어중문학과/응용통계학과 20학번
+
+-   차라투 현장 실습 인턴십(2022년 6월\~)
+
+-   University of North Carolina at Chapel Hill 교환학생(2023-1학기)
+
+## 1. 소개
+
+- 성격 
+
+   -   성취동기가 높음
+   -   목표를 높은 수준에서 수행하고 싶어 하는 의욕이 강함
+   -   단기적으로 주어진 목표에 따라 생활하는 것을 좋아함 
+
+
+- 대학 생활
+   -   1학년: 새롭게 형성한 습관에서 통계를 향한 관심과 열정 비롯
+   -   2학년: 복수전공 -\> 통계학에 대한 전반적인 이해를 높이고 전문 지식을 쌓기 시작
+   -   3학년: 현장실습을 통해 학부 수업에서 배운 내용을 실제 직무에 활용할 기회 획득\
+   -   4학년: 의료 데이터 분석 + 교환학생 + ?
+
+## 2. 차라투에서 맡은 role 
+
+-   분당서울대병원 피부과 교수님 연구 2건
+-   삼성서울병원 안과 교수님 연구
+-   제약회사 임상시험 연구
+-   제약회사 compas 임상연구
+-   강동성심병원 진단검사의학과, 아주대병원 신경과, 가천대 이비인후과 교수님 연구
+-   경희대 영상의학과 교수님 연구, 약물 부작용 연구
+
+=\> Total: 10개 분석 참여(7개 마무리/1개 보류/2개 진행중)
+
+## 2. 차라투에서 맡은 role - 연구 소개(1)
+
+-   분당서울대병원 피부과&안과 교수님 연구, 심평원 데이터 분석
+-   주제: 건선 환자와 두드러기 환자의 포도막염 발병 위험 비교
+-   역할: 분석 전체 과정 참여
+
+::: columns
+::: {.column width="50%"}
+![](table1.png)
+:::
+
+::: {.column width="50%"}
+![](table2.png)
+:::
+:::
+
+## 2. 차라투에서 맡은 role - 연구 소개(1)
+
+-   분당서울대병원 피부과 & 안과 교수님 연구, 심평원 데이터 분석
+-   주제: 건선 환자와 두드러기 환자의 포도막염 발병 위험 비교
+-   역할: 분석 전체 과정 참여
+
+::: columns
+::: {.column width="50%"}
+![](table3.png)
+:::
+
+::: {.column width="50%"}
+![](figure1.png)
+:::
+:::
+
+## 2. 차라투에서 맡은 role - 연구 소개(2)
+
+-   삼성서울병원 안과 교수님 연구, 심평원 데이터 분석
+-   주제: 환자표본자료를 이용한 안구건조증 역학 및 치료에 대한 연구
+-   역할: 분석 전체 과정 참여
+
+<center>![](shiny.png)</center>
+
+## 2. 차라투에서 맡은 role - 연구 소개(3)
+
+-   제약회사 임상시험 연구
+
+-   역할: Baseline demographics table 작성 및 shiny 업데이트
+
+    <center>
+
+    ![](shiny2.png)
+
+</center>
+
+## 2. 차라투에서 맡은 role - 드리고 싶은 말씀 
+
+<center>
+
+1)  데이터 자체에 대한 이해
+2)  분석 흐름에 대한 이해
+3)  분석 결과에 대한 이해
+
+> 꼼꼼함
+
+> -   
+
+> 책임감
+
+> -   
+
+> 인내심
+
+## 3. 앞으로의 비전
+
+<center>
+
+> 교환 생활 무사히 마무리하기
+
+> 남은 학부 수업을 통해 더 깊이 있는 통계 & 수학 지식 쌓기
+
+> 차라투를 통해 더 많은 의료 데이터 분석 경험 쌓기
+
+> Udemy, Coursera를 통해 다양한 언어 익히기
+
+> 대학원 진학 후 석사/박사 학위 취득
+
+> (Big picture) **불확실한** 상황 속에서 **합리적인** 사고와 의사결정을 하는 데 결정적인 역할을 하는 data analyst/scientist로 거듭나기
+
+## 3. 앞으로의 비전
+
+<center>![](me.jpg)</center>
+
+# Thank you for your time
+
+# Questions & Answers
