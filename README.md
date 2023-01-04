@@ -5,3 +5,4 @@
 - [MIDTERM TEST](https://kunhee1208.github.io/lecture/MID_test/)
 - [FINAL Review](https://kunhee1208.github.io/lecture/FINAL_review/)
 - [FINAL TEST](https://kunhee1208.github.io/lecture/FINAL_test/)
+- [Mentoring](https://kunhee1208.github.io/lecture/mentoring/)
